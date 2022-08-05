@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+    "declaration": false,
+    "allowJs": false,
+    "skipLibCheck": false,
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "commonjs",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": false,
+    "jsx": "react",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "baseUrl": "./",
+    "paths": {
+      "~/*": ["src/*"]
+    },
+    "types": [
+      "@types/node",
+    ]
+  },
+  "include": [
+    "./src",
+    "./global.d.ts"
+  ],
+  "exclude": ["node_modules", "dist"]
+}
