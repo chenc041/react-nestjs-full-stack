@@ -4,12 +4,10 @@ LABEL author='double_cl@163.com/chenc'
 
 WORKDIR /myapp
 
-RUN yarn global add pnpm && pnpm add pm2 -g
-
-RUN pnpm config set registry https://registry.npmmirror.com/
+RUN yarn global add pm2
 
 COPY ./packages/api /myapp
 
-EXPOSE 3000
+EXPOSE 3001
 
-CMD ["pm2-runtime", "ecosystem.config.js"]
+CMD ["pm2-runtime", "/myapp/ecosystem.config.js"]
