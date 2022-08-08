@@ -7,7 +7,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 export const config: webpack.Configuration = {
   entry: path.resolve(__dirname, '../src/index'),
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: path.resolve(__dirname, '../../api/client'),
   },
   module: {
     rules: [

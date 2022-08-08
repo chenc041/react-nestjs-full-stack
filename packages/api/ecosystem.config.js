@@ -1,11 +1,11 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const pkg = require('packages/api/package.json');
+const pkg = require('./package.json');
 
 module.exports = {
   apps: [
     {
       name: pkg.name || 'nestjs-demo',
-      script: './dist/main.js',
+      script: '/myapp/dist/main.js',
       env: {
         NODE_ENV: 'production',
       },

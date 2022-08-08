@@ -9,7 +9,7 @@ import { join } from 'path';
     ConfigModule,
     ExampleModule,
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '../..', 'client'),
+      rootPath: join(__dirname, `../../${process.env.NODE_ENV === 'production' ? 'myapp' : 'api'}`, 'client'),
     }),
   ],
 })
