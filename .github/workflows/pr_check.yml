@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ 16 ]
+        node-version: [ 16, 18 ]
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2.2.2
@@ -23,6 +23,12 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
 
-      - name: test-api
-        run: cd ./packages/api && pnpm i --no-lockfile && pnpm run test
+      - name: install dep
+        run: cd ./packages/api && pnpm i --no-lockfile
+
+      - name: run test
+        run: cd ./packages/api && pnpm run test
+
+      - name: run e2e test
+        run: cd ./packages/api && pnpm run test:e2e
 

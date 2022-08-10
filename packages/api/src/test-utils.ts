@@ -7,6 +7,7 @@ import { PassportModule } from '@nestjs/passport';
 import { WinstonModule } from 'nest-winston';
 import { WinstonConfigService } from '~/config/winston-config/winston-config.service';
 import { JwtConfigService } from '~/config/jwt-config/jwt-config.service';
+import { JwtStrategy } from '~/config/jwt-config/jwt.strategy';
 
 const { register: jwtRegister } = JwtModule;
 const { register: PassportRegister } = PassportModule;
@@ -36,6 +37,6 @@ export const TypeOrmTestingModule = ({ controllers, providers, entities }: { con
       }),
     ],
     controllers: controllers,
-    providers: [JwtConfigService, WinstonConfigService, ...providers],
+    providers: [JwtConfigService, WinstonConfigService, JwtStrategy, ...providers],
   };
 };
