@@ -20,7 +20,7 @@ export const TypeOrmTestingModule = ({ controllers, providers, entities }: { con
         database: ':memory:',
         dropSchema: true,
         synchronize: true,
-        entities: [join(__dirname, '../../entities/*.entity.{ts,js}')],
+        entities: [join(__dirname, '../../api/src/entities/*.entity.{ts,js}')],
       }),
       TypeOrmModule.forFeature(entities),
       jwtRegister({
