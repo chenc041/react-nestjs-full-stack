@@ -27,8 +27,5 @@ jobs:
         run: cd ./packages/api && pnpm i --no-lockfile
 
       - name: run test
-        run: cd ./packages/api && pnpm run test
-
-      - name: run e2e test
-        run: cd ./packages/api && pnpm run test:e2e
+        run: cd ./packages/api && pnpm run test && pnpm run test:e2e
 

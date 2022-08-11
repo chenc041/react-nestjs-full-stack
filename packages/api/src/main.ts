@@ -3,17 +3,20 @@ import { AppModule } from '~/app.module';
 import { ValidationPipe } from '@nestjs/common';
 import { Logger } from '@nestjs/common';
 
+const port = 3001;
+
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   // more info https://docs.nestjs.com/techniques/validation
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
+      transform: true,
     }),
   );
   app.setGlobalPrefix('/api/v1');
-  await app.listen(3000);
+  await app.listen(port);
 }
 bootstrap().then(() => {
-  return Logger.log('this api server is running at: http://localhost:3000');
+  return Logger.log(`This server is running at: http://localhost:${port}`);
 });
