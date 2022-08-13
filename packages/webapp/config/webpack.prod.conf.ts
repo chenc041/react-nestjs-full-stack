@@ -1,7 +1,18 @@
-import webpack from 'webpack';
+import webpack, { Configuration } from 'webpack';
 import { merge } from 'webpack-merge';
 import TerserPlugin from 'terser-webpack-plugin';
 import { config } from './webpack.common';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+
+const plugins: Configuration['plugins'] = [
+  new webpack.DefinePlugin({
+    'process.env.NODE_ENV': JSON.stringify('production'),
+  }),
+];
+
+if (process.env.ANALYZER) {
+  plugins.push(new BundleAnalyzerPlugin());
+}
 
 export default merge(config, {
   mode: 'production',
@@ -36,9 +47,5 @@ export default merge(config, {
     performance: false,
     chunkModules: false,
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production'),
-    }),
-  ],
+  plugins,
 });
