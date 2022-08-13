@@ -42,14 +42,11 @@ export const config: webpack.Configuration = {
       },
       {
         test: /\.(ts|tsx|jsx|js)$/,
-        use: [
-          {
-            loader: 'babel-loader',
-          },
-          {
-            loader: 'ts-loader',
-          },
-        ],
+        loader: 'esbuild-loader',
+        options: {
+          loader: 'tsx',
+          target: 'es2015',
+        },
         exclude: /node_modules/,
       },
     ],
