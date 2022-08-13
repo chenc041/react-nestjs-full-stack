@@ -12,7 +12,6 @@ const App = () => {
         <Routes>
           {routes.map((item) => {
             const { pathname, component: Component } = item;
-            console.log('path', pathname);
             return (
               <Route
                 key={pathname}
