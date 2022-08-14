@@ -4,7 +4,8 @@ react and nestjs full stack template
 
 <div  align='center'>
 
-![ci workflow](https://github.com/chenc041/react-nestjs-full-stack/actions/workflows/ci.yml/badge.svg)
+[![ci workflow](https://github.com/chenc041/react-nestjs-full-stack/actions/workflows/ci.yml/badge.svg)](https://github.com/chenc041/react-nestjs-full-stack)
+[![codecov](https://codecov.io/gh/chenc041/react-nestjs-full-stack/branch/main/graph/badge.svg?token=pYefUWcu8I)](https://codecov.io/gh/chenc041/react-nestjs-full-stack)
 
 </div>
 

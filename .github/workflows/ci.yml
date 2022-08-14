@@ -1,5 +1,6 @@
 name: ci
 on:
+  push:
   pull_request:
     types:
       - opened
@@ -51,7 +52,8 @@ jobs:
       - name: run test cov
         run: cd ./packages/api && pnpm run test:cov
 
-      - uses: codecov/codecov-action@v3
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
-          directory: ./packages/api/coverage
+      - name: Upload api coverage to Codecov
+        uses: codecov/codecov-action@v3
+#        with:
+#          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+#          files: ./packages/api/coverage/cobertura-coverage.xml # optional
