@@ -11,7 +11,7 @@ react and nestjs full stack template
 
 ## 🤡 Author
 - name: [chenc](https://github.com/chenc041)
-- email: double_cl@163.co
+- email: double_cl@163.com
 
 ## ✨Features
 #### api
