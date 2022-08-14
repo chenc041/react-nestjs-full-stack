@@ -57,3 +57,5 @@ jobs:
           files: ./packages/api/coverage/clover.xml # optional
           flags: unittests # optional
           name: codecov-umbrella # optional
+          verbose: true
+          directory: ./packages/api/coverage/lcov-report/
