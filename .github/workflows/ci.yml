@@ -51,11 +51,8 @@ jobs:
       - name: run test cov
         run: cd ./packages/api && pnpm run test:cov
 
-      - name: upload code cov
-        run: cd ''
-
       - name: Upload api coverage to Codecov
-        run: cd ./packages/api
+#        run: cd ./packages/api
         uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
