@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ 16, 18 ]
+        node-version: [ 16 ]
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2.2.2
@@ -28,6 +28,9 @@ jobs:
 
       - name: run test
         run: cd ./packages/api && pnpm run test && pnpm run test:e2e
+
+      - name: run test cov
+        run: cd ./packages/api && pnpm run test && pnpm run test:cov
 
   coverage:
     runs-on: ubuntu-latest
