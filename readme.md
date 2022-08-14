@@ -9,6 +9,10 @@ react and nestjs full stack template
 
 </div>
 
+## 🤡 Author
+- name: [chenc](https://github.com/chenc041)
+- email: double_cl@163.co
+
 ## ✨Features
 #### api
 - nestjs
@@ -34,6 +38,3 @@ $ pnpm run build
 ## ☀️ License
 [MIT](https://github.com/chenc041/react-nestjs-full-stack/blob/main/LICENSE)
 
-## 🤡 Author
-
-[chenc](https://github.com/chenc041)
