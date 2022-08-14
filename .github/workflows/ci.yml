@@ -1,5 +1,6 @@
 name: ci
 on:
+  push:
   pull_request:
     types:
       - opened
@@ -52,7 +53,6 @@ jobs:
         run: cd ./packages/api && pnpm run test:cov
 
       - name: Upload api coverage to Codecov
-#        run: cd ./packages/api
         uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
