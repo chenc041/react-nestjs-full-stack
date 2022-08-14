@@ -4,7 +4,7 @@ react and nestjs full stack template
 
 <div  align='center'>
 
-![ci workflow](https://github.com/chenc041/react-nestjs-full-stack/actions/workflows/pr_check.yml/badge.svg)
+![ci workflow](https://github.com/chenc041/react-nestjs-full-stack/actions/workflows/ci.yml/badge.svg)
 
 </div>
 

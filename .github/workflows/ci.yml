@@ -1,0 +1,59 @@
+name: ci
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 16 ]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+
+      - name: install dep
+        run: cd ./packages/api && pnpm i --no-lockfile
+
+      - name: run test
+        run: cd ./packages/api && pnpm run test && pnpm run test:e2e
+
+  coverage:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 16 ]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+
+      - name: install dep
+        run: cd ./packages/api && pnpm i --no-lockfile
+
+      - name: run test cov
+        run: cd ./packages/api && pnpm run test && pnpm run test:cov
+
+      - uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+          files: ./packages/api/coverage/clover.xml # optional
+          flags: unittests # optional
+          name: codecov-umbrella # optional
