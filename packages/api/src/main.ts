@@ -2,6 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from '~/app.module';
 import { ValidationPipe } from '@nestjs/common';
 import { Logger } from '@nestjs/common';
+import * as cookieParser from 'cookie-parser';
 
 const port = 3001;
 
@@ -14,6 +15,7 @@ async function bootstrap() {
       transform: true,
     }),
   );
+  app.use(cookieParser());
   app.setGlobalPrefix('/api/v1');
   await app.listen(port);
 }
