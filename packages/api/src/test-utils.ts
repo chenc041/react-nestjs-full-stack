@@ -29,7 +29,7 @@ export const TypeOrmTestingModule = ({ controllers, providers, entities }: { con
       }),
       LoadEnvModule.forRoot({
         isGlobal: true,
-        envFilePath: [join(__dirname, '..', `../../env/.${process.env.NODE_ENV || 'development'}.env`)],
+        envFilePath: [join(__dirname, '..', `../api/.${process.env.NODE_ENV || 'development'}.env`)],
       }),
       PassportRegister({ defaultStrategy: 'jwt' }),
       WinstonModule.forRootAsync({
