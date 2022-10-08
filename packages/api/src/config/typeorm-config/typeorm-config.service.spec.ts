@@ -1,5 +1,5 @@
 import { TestingModule, Test } from '@nestjs/testing';
-import { TypeOrmTestingModule } from '~/test-utils';
+import { TypeOrmTestingModule } from '~/test.utils';
 import { TypeOrmConfigService } from '~/config/typeorm-config/typeorm-config.service';
 
 describe('TypeOrmConfigService', () => {

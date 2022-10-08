@@ -7,7 +7,7 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config config/webpack.dev.conf.ts",
     "build": "pnpm run clean && cross-env NODE_ENV=production webpack --config config/webpack.prod.conf.ts",
     "analyzer": "cross-env ANALYZER=true webpack --config config/webpack.prod.conf.ts",
-    "clean": "rimraf ./dist",
+    "clean": "rimraf ../api/client",
     "prebuild": "pnpm run clean",
     "lint-staged": "lint-staged",
     "lint-staged:tsx": "tsc --noEmit && eslint --fix 'src/**/**/*.{js,ts,tsx}'",

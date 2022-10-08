@@ -58,7 +58,9 @@ export const config: webpack.Configuration = {
     },
   },
   plugins: [
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].[hash:5].css',
+    }),
     new webpack.ProgressPlugin({
       activeModules: true,
       entries: true,
