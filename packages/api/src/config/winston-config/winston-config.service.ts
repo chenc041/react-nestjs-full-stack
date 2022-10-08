@@ -12,25 +12,18 @@ export class WinstonConfigService implements WinstonModuleOptionsFactory {
     if (NODE_ENV === 'development') {
       transports.push(new winston.transports.Console());
     } else {
-      const fileInfoTransport = new winston.transports.DailyRotateFile({
-        level: 'info',
-        maxSize: '5m',
-        maxFiles: '14d',
-        zippedArchive: true,
-        datePattern: 'YYYY-MM-DD',
-        filename: `log/api-info-%DATE%.log`,
+      ['error', 'debug', 'info', 'warning'].forEach((item) => {
+        transports.push(
+          new winston.transports.DailyRotateFile({
+            level: item,
+            maxSize: '5m',
+            maxFiles: '14d',
+            zippedArchive: true,
+            datePattern: 'YYYY-MM-DD',
+            filename: `log/api-${item}-%DATE%.log`,
+          }),
+        );
       });
-
-      const fileErrorTransport = new winston.transports.DailyRotateFile({
-        level: 'error',
-        maxSize: '5m',
-        maxFiles: '14d',
-        zippedArchive: true,
-        datePattern: 'YYYY-MM-DD',
-        filename: `log/api-error-%DATE%.log`,
-      });
-      transports.push(fileInfoTransport);
-      transports.push(fileErrorTransport);
     }
     return {
       transports: transports,
