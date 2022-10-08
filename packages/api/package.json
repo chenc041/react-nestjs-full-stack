@@ -91,7 +91,8 @@
     "collectCoverageFrom": [
       "**/*.(t|j)s"
     ],
-    "collectCoverage": true,
+    "verbose": true,
+    "collectCoverage": false,
     "coverageReporters": [
       "text",
       "cobertura"
