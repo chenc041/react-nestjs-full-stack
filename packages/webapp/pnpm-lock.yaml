@@ -17,7 +17,7 @@ specifiers:
   '@typescript-eslint/parser': ^5.39.0
   autoprefixer: ^10.4.12
   axios: ^1.1.2
-  babel-loader: ^8.2.5
+  babel-loader: ^9.0.0
   core-js: ^3.25.5
   cross-env: ^7.0.3
   css-loader: ^6.7.1
@@ -86,7 +86,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 5.39.0_cfd7h3iktziq6hcwahu2qxhjhy
   '@typescript-eslint/parser': 5.39.0_z4bbprzjrhnsfa24uvmcbu7f5q
   autoprefixer: 10.4.12_postcss@8.4.17
-  babel-loader: 8.2.5_wfdvla2jorjoj23kkavho2upde
+  babel-loader: 9.1.0_wfdvla2jorjoj23kkavho2upde
   cross-env: 7.0.3
   css-loader: 6.7.1_webpack@5.74.0
   cssnano: 5.1.13_postcss@8.4.17
@@ -2247,18 +2247,17 @@ packages:
       - debug
     dev: false
 
-  /babel-loader/8.2.5_wfdvla2jorjoj23kkavho2upde:
-    resolution: {integrity: sha512-OSiFfH89LrEMiWd4pLNqGz4CwJDtbs2ZVc+iGu2HrkRfPxId9F2anQj38IxWpmRfsUY0aBZYi1EFcd3mhtRMLQ==}
-    engines: {node: '>= 8.9'}
+  /babel-loader/9.1.0_wfdvla2jorjoj23kkavho2upde:
+    resolution: {integrity: sha512-Antt61KJPinUMwHwIIz9T5zfMgevnfZkEVWYDWlG888fgdvRRGD0JTuf/fFozQnfT+uq64sk1bmdHDy/mOEWnA==}
+    engines: {node: '>= 14.15.0'}
     peerDependencies:
-      '@babel/core': ^7.0.0
-      webpack: '>=2'
+      '@babel/core': ^7.12.0
+      webpack: '>=5'
     dependencies:
       '@babel/core': 7.19.3
       find-cache-dir: 3.3.2
       loader-utils: 2.0.2
       make-dir: 3.1.0
-      schema-utils: 2.7.1
       webpack: 5.74.0_webpack-cli@5.0.0
     dev: true
 
@@ -5738,15 +5737,6 @@ packages:
     dependencies:
       loose-envify: 1.4.0
     dev: false
-
-  /schema-utils/2.7.1:
-    resolution: {integrity: sha512-SHiNtMOUGWBQJwzISiVYKu82GiV4QYGePp3odlY1tuKO7gPtphAT5R/py0fA6xtbgLL/RvtJZnU9b8s0F1q0Xg==}
-    engines: {node: '>= 8.9.0'}
-    dependencies:
-      '@types/json-schema': 7.0.11
-      ajv: 6.12.6
-      ajv-keywords: 3.5.2_ajv@6.12.6
-    dev: true
 
   /schema-utils/3.1.1:
     resolution: {integrity: sha512-Y5PQxS4ITlC+EahLuXaY86TXfR7Dc5lw294alXOq86JAHCihAIZfqv8nNCWvaEJvaC51uN9hbLGeV0cFBdH+Fw==}
