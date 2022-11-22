@@ -33,7 +33,7 @@
     "@nestjs/serve-static": "^3.0.0",
     "@nestjs/typeorm": "^9.0.1",
     "bcryptjs": "^2.4.3",
-    "better-sqlite3": "^7.6.2",
+    "better-sqlite3": "^8.0.0",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
     "cookie-parser": "^1.4.6",
