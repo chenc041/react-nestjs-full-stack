@@ -41,7 +41,7 @@ specifiers:
   react-helmet: ^6.1.0
   react-router-dom: ^6.4.2
   redux: ^4.2.0
-  rimraf: ^3.0.2
+  rimraf: ^4.0.0
   sass: ^1.55.0
   sass-loader: ^13.1.0
   style-loader: ^3.3.1
@@ -102,7 +102,7 @@ devDependencies:
   mini-css-extract-plugin: 2.6.1_webpack@5.74.0
   prettier: 2.7.1
   progress-bar-webpack-plugin: 2.1.0_webpack@5.74.0
-  rimraf: 3.0.2
+  rimraf: 4.0.4
   sass: 1.55.0
   sass-loader: 13.1.0_sass@1.55.0+webpack@5.74.0
   style-loader: 3.3.1_webpack@5.74.0
@@ -2258,6 +2258,7 @@ packages:
       find-cache-dir: 3.3.2
       loader-utils: 2.0.2
       make-dir: 3.1.0
+      schema-utils: 4.0.0
       webpack: 5.74.0_webpack-cli@5.0.0
     dev: true
 
@@ -5675,6 +5676,12 @@ packages:
     hasBin: true
     dependencies:
       glob: 7.2.3
+
+  /rimraf/4.0.4:
+    resolution: {integrity: sha512-R0hoVr9xTwemarQjoWlNt/nb5dEGVTBhVdkRmEX2zEkT8T6onH0XKiGjuaC7rNNj/gYzY2p4NVRJ3sjO1ascHQ==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: true
 
   /run-parallel/1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
