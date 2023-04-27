@@ -46,7 +46,7 @@ specifiers:
   sass-loader: ^13.1.0
   style-loader: ^3.3.1
   stylelint: ^14.13.0
-  stylelint-config-recommended: ^9.0.0
+  stylelint-config-recommended: ^10.0.0
   terser-webpack-plugin: ^5.3.6
   ts-loader: ^9.4.1
   ts-node: ^10.9.1
@@ -107,7 +107,7 @@ devDependencies:
   sass-loader: 13.1.0_sass@1.55.0+webpack@5.74.0
   style-loader: 3.3.1_webpack@5.74.0
   stylelint: 14.13.0
-  stylelint-config-recommended: 9.0.0_stylelint@14.13.0
+  stylelint-config-recommended: 10.0.1_stylelint@14.13.0
   terser-webpack-plugin: 5.3.6_webpack@5.74.0
   ts-loader: 9.4.1_qqxisngxjbp7lstdk7boexbu3e
   ts-node: 10.9.1_xtdkmayvpbwqd3kc4kczaw2zvm
@@ -6125,10 +6125,10 @@ packages:
       postcss-selector-parser: 6.0.10
     dev: true
 
-  /stylelint-config-recommended/9.0.0_stylelint@14.13.0:
-    resolution: {integrity: sha512-9YQSrJq4NvvRuTbzDsWX3rrFOzOlYBmZP+o513BJN/yfEmGSr0AxdvrWs0P/ilSpVV/wisamAHu5XSk8Rcf4CQ==}
+  /stylelint-config-recommended/10.0.1_stylelint@14.13.0:
+    resolution: {integrity: sha512-TQ4xQ48tW4QSlODcti7pgSRqBZcUaBzuh0jPpfiMhwJKBPkqzTIAU+IrSWL/7BgXlOM90DjB7YaNgFpx8QWhuA==}
     peerDependencies:
-      stylelint: ^14.10.0
+      stylelint: ^15.0.0
     dependencies:
       stylelint: 14.13.0
     dev: true
