@@ -1,4 +1,4 @@
-FROM node:18-alpine3.15
+FROM node:19-alpine3.15
 
 LABEL author='double_cl@163.com/chenc'
 
