@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -27,8 +27,8 @@ dependencies:
     specifier: ^9.4.0
     version: 9.4.0(@nestjs/common@9.4.0)(@nestjs/core@9.4.0)
   '@nestjs/serve-static':
-    specifier: ^3.0.1
-    version: 3.0.1(@nestjs/common@9.4.0)(@nestjs/core@9.4.0)
+    specifier: ^4.0.0
+    version: 4.0.0(@nestjs/common@9.4.0)(@nestjs/core@9.4.0)
   '@nestjs/typeorm':
     specifier: ^9.0.1
     version: 9.0.1(@nestjs/common@9.4.0)(@nestjs/core@9.4.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)(typeorm@0.3.15)
@@ -93,7 +93,7 @@ devDependencies:
     version: 9.4.2
   '@nestjs/schematics':
     specifier: ^9.1.0
-    version: 9.1.0(chokidar@3.5.3)(typescript@4.9.5)
+    version: 9.1.0(typescript@5.0.4)
   '@nestjs/testing':
     specifier: ^9.4.0
     version: 9.4.0(@nestjs/common@9.4.0)(@nestjs/core@9.4.0)(@nestjs/platform-express@9.4.0)
@@ -1098,12 +1098,26 @@ packages:
       - chokidar
     dev: true
 
-  /@nestjs/serve-static@3.0.1(@nestjs/common@9.4.0)(@nestjs/core@9.4.0):
-    resolution: {integrity: sha512-i766UJPYOqvQ2BbRKh0/+Mmq5NkJnmKcShjWV1i5qpXyeM0KDZTn0n7g7ykWq/3LbQgjpMzrhYtGv35GX7GVQw==}
+  /@nestjs/schematics@9.1.0(typescript@5.0.4):
+    resolution: {integrity: sha512-/7CyMTnPJSK9/xD9CkCqwuHPOlHVlLC2RDnbdCJ7mIO07SdbBbY14msTqtYW9VRQtsjZPLh1GTChf7ryJUImwA==}
+    peerDependencies:
+      typescript: '>=4.3.5'
+    dependencies:
+      '@angular-devkit/core': 15.2.4(chokidar@3.5.3)
+      '@angular-devkit/schematics': 15.2.4(chokidar@3.5.3)
+      jsonc-parser: 3.2.0
+      pluralize: 8.0.0
+      typescript: 5.0.4
+    transitivePeerDependencies:
+      - chokidar
+    dev: true
+
+  /@nestjs/serve-static@4.0.0(@nestjs/common@9.4.0)(@nestjs/core@9.4.0):
+    resolution: {integrity: sha512-8cTrNV2ngdHIjiLNsXePnw0+KY1ThrZGz/WeyAG5gIvmZNDbnZBOrPoYlKL+MOzlXlQStxR5jKLYmn+nJeoncQ==}
     peerDependencies:
       '@fastify/static': ^6.5.0
-      '@nestjs/common': ^9.0.0
-      '@nestjs/core': ^9.0.0
+      '@nestjs/common': ^9.0.0 || ^10.0.0
+      '@nestjs/core': ^9.0.0 || ^10.0.0
       express: ^4.18.1
       fastify: ^4.7.0
     peerDependenciesMeta:
