@@ -143,8 +143,8 @@ devDependencies:
     specifier: ^15.8.0
     version: 15.8.0
   stylelint-config-recommended:
-    specifier: ^12.0.0
-    version: 12.0.0(stylelint@15.8.0)
+    specifier: ^13.0.0
+    version: 13.0.0(stylelint@15.8.0)
   terser-webpack-plugin:
     specifier: ^5.3.9
     version: 5.3.9(webpack@5.87.0)
@@ -6530,10 +6530,11 @@ packages:
       postcss-selector-parser: 6.0.13
     dev: true
 
-  /stylelint-config-recommended@12.0.0(stylelint@15.8.0):
-    resolution: {integrity: sha512-x6x8QNARrGO2sG6iURkzqL+Dp+4bJorPMMRNPScdvaUK8PsynriOcMW7AFDKqkWAS5wbue/u8fUT/4ynzcmqdQ==}
+  /stylelint-config-recommended@13.0.0(stylelint@15.8.0):
+    resolution: {integrity: sha512-EH+yRj6h3GAe/fRiyaoO2F9l9Tgg50AOFhaszyfov9v6ayXJ1IkSHwTxd7lB48FmOeSGDPLjatjO11fJpmarkQ==}
+    engines: {node: ^14.13.1 || >=16.0.0}
     peerDependencies:
-      stylelint: ^15.5.0
+      stylelint: ^15.10.0
     dependencies:
       stylelint: 15.8.0
     dev: true
