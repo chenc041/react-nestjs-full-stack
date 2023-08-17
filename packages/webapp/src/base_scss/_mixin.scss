@@ -1,0 +1,3 @@
+@mixin headerBoxShadow($theme: DarkGray) {
+  box-shadow: 0 0 4px 2px rgba($theme, 0.25);
+}

@@ -17,6 +17,8 @@
     "cover 99.5% in CN"
   ],
   "dependencies": {
+    "@ant-design/icons": "^5.2.5",
+    "antd": "^5.8.3",
     "axios": "^1.4.0",
     "core-js": "^3.32.0",
     "postcss": "^8.4.27",

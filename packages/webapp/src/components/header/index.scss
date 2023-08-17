@@ -1,0 +1,11 @@
+@use '~/base_scss/_mixin';
+
+.header {
+  top: 0;
+  width: 100%;
+  height: 48px;
+  z-index: 100;
+  position: sticky;
+  background-color: #fff;
+  @include mixin.headerBoxShadow($theme: #333);
+}
