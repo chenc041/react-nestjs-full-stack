@@ -32,9 +32,7 @@ const menuItems: MenuProps['items'] = routes
     );
   });
 
-export const SideMenu = (props: { width?: number }) => {
-  const { width } = props;
-  console.log(width, 'width');
+export const SideMenu = () => {
   const { activePath, setActivePath } = useContext<GlobalContextType>(GlobalContext);
   const onClick: MenuProps['onClick'] = (e) => {
     setActivePath(e.key);

@@ -6,7 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Layout } from '~/pages/layout';
 
 const App = () => {
-  const [activePath, setActivePath] = React.useState('/demo-1');
+  const [activePath, setActivePath] = React.useState('/');
   const [userInfo, setUserInfo] = React.useState<UserInfo>({});
 
   const flatRoutes = useMemo(() => {
