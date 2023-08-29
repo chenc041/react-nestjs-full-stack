@@ -12,9 +12,11 @@ export default merge(config, {
       logging: 'info',
       progress: true,
     },
+    historyApiFallback: true,
   },
   stats: {
     modules: false,
+    errorDetails: true,
   },
   plugins: [new webpack.HotModuleReplacementPlugin()],
 });

@@ -3,6 +3,7 @@ import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import 'webpack-dev-server';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import * as process from 'process';
 
 export const config: webpack.Configuration = {
   entry: path.resolve(__dirname, '../src/index'),
@@ -19,7 +20,7 @@ export const config: webpack.Configuration = {
             loader: 'css-loader',
             options: {
               modules: {
-                localIdentName: '[name]__[local]__[hash:base64:5]',
+                localIdentName: '[name]__[local]__[contenthash:base64:5]',
               },
             },
           },
@@ -35,18 +36,25 @@ export const config: webpack.Configuration = {
             loader: 'url-loader',
             options: {
               limit: 15000,
-              name: './assets/[name].[hash:4].[ext]',
+              name: './assets/[name].[contenthash:4].[ext]',
             },
           },
         ],
       },
       {
         test: /\.(ts|tsx|jsx|js)$/,
-        loader: 'esbuild-loader',
-        options: {
-          loader: 'tsx',
-          target: 'es2015',
-        },
+        use: [
+          {
+            loader: 'thread-loader',
+          },
+          {
+            loader: 'esbuild-loader',
+            options: {
+              loader: 'tsx',
+              target: 'es2015',
+            },
+          },
+        ],
         exclude: /node_modules/,
       },
     ],
@@ -56,10 +64,13 @@ export const config: webpack.Configuration = {
     alias: {
       '~': path.resolve('src'),
     },
+    fallback: {
+      process: require.resolve('process/browser'),
+    },
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].[hash:5].css',
+      filename: '[name].[contenthash:5].css',
     }),
     new webpack.ProgressPlugin({
       activeModules: true,

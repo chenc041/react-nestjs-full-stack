@@ -18,7 +18,7 @@ export default merge(config, {
   mode: 'production',
   devtool: false,
   output: {
-    filename: '[name].[hash].js',
+    filename: '[name].[contenthash].js',
     publicPath: './',
   },
   optimization: {

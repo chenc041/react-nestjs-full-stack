@@ -1,11 +1,21 @@
 import React from 'react';
 
+export interface UserInfo {
+  id?: number;
+  avatar?: string;
+  username?: string;
+}
+
 export interface GlobalContextType {
-  appName: string;
-  setAppName: (name: string) => void;
+  activePath: string;
+  userInfo: UserInfo;
+  setActivePath: (path: string) => void;
+  setUserInfo: (userInfo: UserInfo) => void;
 }
 
 export const GlobalContext = React.createContext<GlobalContextType>({
-  appName: '',
-  setAppName: () => {},
+  userInfo: {},
+  activePath: '/',
+  setUserInfo: () => {},
+  setActivePath: () => {},
 });
