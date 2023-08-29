@@ -1,9 +1,12 @@
-import React, { Suspense, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { routes, RoutesType } from '~/routes';
-import { Spin } from 'antd';
+import { Spin, ConfigProvider } from 'antd';
 import { GlobalContext, UserInfo } from '~/context';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Layout } from '~/pages/layout';
+import { BasicLayout } from '~/layout';
+import Zh_CN from 'antd/locale/zh_CN';
+import { ErrorBoundary } from '~/exception/errorBoundary';
+import * as process from 'process';
 
 const App = () => {
   const [activePath, setActivePath] = React.useState('/');
@@ -17,7 +20,8 @@ const App = () => {
         item.children.forEach((child) => {
           tempFlatRoutes.push({
             ...child,
-            path: item.path + child.path,
+            path:
+              (item.path === '/' ? item.path : item.path + '/') + (child.path.startsWith('/') ? child.path.replace(/^\//, '') : child.path),
           });
         });
       }
@@ -28,7 +32,18 @@ const App = () => {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <Layout />,
+      element: <BasicLayout />,
+      errorElement: <ErrorBoundary />,
+      loader:
+        process.env.NODE_ENV === 'development'
+          ? undefined
+          : async () => {
+              return new Promise((resolve) => {
+                setTimeout(() => {
+                  resolve({ name: 'chen' });
+                }, 100);
+              });
+            },
       children: flatRoutes.map((item) => {
         const { path, component: Com } = item;
         return {
@@ -44,11 +59,26 @@ const App = () => {
   ]);
 
   return (
-    <GlobalContext.Provider value={{ userInfo, activePath, setActivePath, setUserInfo }}>
-      <Suspense fallback={<Spin size="large" />}>
-        <RouterProvider router={router} />
-      </Suspense>
-    </GlobalContext.Provider>
+    <ConfigProvider locale={Zh_CN}>
+      <GlobalContext.Provider value={{ userInfo, activePath, setActivePath, setUserInfo }}>
+        <RouterProvider
+          router={router}
+          fallbackElement={
+            <div
+              style={{
+                width: '100vw',
+                height: '100vh',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Spin size="large" />
+            </div>
+          }
+        />
+      </GlobalContext.Provider>
+    </ConfigProvider>
   );
 };
 

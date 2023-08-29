@@ -43,11 +43,18 @@ export const config: webpack.Configuration = {
       },
       {
         test: /\.(ts|tsx|jsx|js)$/,
-        loader: 'esbuild-loader',
-        options: {
-          loader: 'tsx',
-          target: 'es2015',
-        },
+        use: [
+          {
+            loader: 'thread-loader',
+          },
+          {
+            loader: 'esbuild-loader',
+            options: {
+              loader: 'tsx',
+              target: 'es2015',
+            },
+          },
+        ],
         exclude: /node_modules/,
       },
     ],
@@ -56,6 +63,9 @@ export const config: webpack.Configuration = {
     extensions: ['.tsx', '.ts', '.js'],
     alias: {
       '~': path.resolve('src'),
+    },
+    fallback: {
+      process: require.resolve('process/browser'),
     },
   },
   plugins: [

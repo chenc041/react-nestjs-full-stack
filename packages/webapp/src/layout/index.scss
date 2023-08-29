@@ -7,23 +7,15 @@
 
   .layoutMain {
     display: flex;
+    position: relative;
     flex-direction: row;
     height: calc(100vh - 52px);
   }
 
-  aside {
-    width: 208px;
-    height: 100%;
-    flex-shrink: 0;
-    position: sticky;
-    padding-top: 6px;
-    box-sizing: border-box;
-    background-color: #ffffff;
-  }
-
   section {
-    width: 100%;
+    flex: 1;
     height: 100%;
     min-height: calc(100vh - 52px);
+    transition: all ease-in-out 0.8s;
   }
 }

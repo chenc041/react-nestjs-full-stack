@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
-import type { MenuProps } from 'antd';
 import { Menu } from 'antd';
-import { routes } from '~/routes';
+import type { MenuProps } from 'antd';
 import { GlobalContext, GlobalContextType } from '~/context';
+import { routes } from '~/routes';
 import { Link } from 'react-router-dom';
+import styles from '~/components/sideMenu/index.scss';
+import { globalConfig } from '~/config';
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -31,7 +33,6 @@ const menuItems: MenuProps['items'] = routes
         : undefined
     );
   });
-
 export const SideMenu = () => {
   const { activePath, setActivePath } = useContext<GlobalContextType>(GlobalContext);
   const onClick: MenuProps['onClick'] = (e) => {
@@ -39,13 +40,19 @@ export const SideMenu = () => {
   };
 
   return (
-    <Menu
-      mode="inline"
-      onClick={onClick}
-      items={menuItems}
-      defaultOpenKeys={[activePath]}
-      defaultSelectedKeys={[activePath]}
-      style={{ width: '100%', height: '100%' }}
-    />
+    <>
+      <Menu
+        mode="inline"
+        onClick={onClick}
+        items={menuItems}
+        className={styles.sideMenu}
+        defaultOpenKeys={[activePath]}
+        theme={globalConfig.menuTheme}
+        defaultSelectedKeys={[activePath]}
+        inlineCollapsed={globalConfig.collapsed}
+        style={{ position: 'fixed', top: 52, zIndex: 10, width: globalConfig.collapsed ? 'auto' : 208 }}
+      />
+      <div className={styles.sideMenu} style={{ opacity: 0, width: globalConfig.collapsed ? 106 : 208 }} />
+    </>
   );
 };
