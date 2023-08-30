@@ -23,11 +23,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+      - name: install dep
+        run: pnpm i
       # Install npm dependencies, cache them correctly
       # and run all Cypress tests
       - name: cy run
         uses: cypress-io/github-action@v5
         with:
           working-directory: './packages/webapp'
-          build: pnpm i && pnpm dev && wait-on http://localhost:8080
+          build: pnpm dev && wait-on http://localhost:8080
           browser: chrome
