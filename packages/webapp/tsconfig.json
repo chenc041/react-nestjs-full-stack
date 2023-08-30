@@ -33,6 +33,7 @@
   "include": [
     "./src",
     "./config",
+    "./cypress",
     "./global.d.ts"
   ],
   "exclude": ["node_modules", "dist"]

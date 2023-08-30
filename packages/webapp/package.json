@@ -11,7 +11,8 @@
     "prebuild": "pnpm run clean",
     "lint-staged": "lint-staged",
     "lint-staged:tsx": "tsc --noEmit && eslint --fix 'src/**/**/*.{js,ts,tsx}'",
-    "prettier": "prettier --write src/**/**/*.tsx"
+    "prettier": "prettier --write src/**/**/*.tsx",
+    "cy:run": "cypress run"
   },
   "browserslist": [
     "cover 99.5% in CN"
@@ -48,6 +49,7 @@
     "cross-env": "^7.0.3",
     "css-loader": "^6.8.1",
     "cssnano": "^6.0.1",
+    "cypress": "^12.17.4",
     "esbuild-loader": "^4.0.1",
     "eslint": "^8.48.0",
     "eslint-config-prettier": "^9.0.0",
