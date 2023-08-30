@@ -25,9 +25,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       # Install npm dependencies, cache them correctly
       # and run all Cypress tests
-      - name: folder
-        uses: './packages/webapp'
       - name: cy run
         uses: cypress-io/github-action@v5
         with:
+          working-directory: './packages/webapp'
           browser: chrome
