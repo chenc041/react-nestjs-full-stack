@@ -27,6 +27,7 @@ jobs:
       # and run all Cypress tests
       - name: cy run
         uses: cypress-io/github-action@v5
+        run: pnpm i && pnpm dev && wait-on http://localhost:8080
         with:
           working-directory: './packages/webapp'
           browser: chrome
