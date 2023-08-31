@@ -20,10 +20,16 @@ react and nestjs full stack template
 - typeorm
 - winston
 - jwt
+- fastify
 
 #### webapp
 - react
 - sass
+- antd
+- cypress
+
+### Tips
+> The project code pull is completed, and the project code of the [api](https://github.com/chenc041/nestjs-starter) part will be automatically pulled when installing dependencies
 
 ## 🔨Development
 ```shell
