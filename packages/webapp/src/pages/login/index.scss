@@ -1,0 +1,40 @@
+@use '~/base_scss/_mixin';
+.loginLeft {
+  @include mixin.center;
+
+  span {
+    height: 100vh;
+    font-size: 40px;
+    line-height: 100vh;
+  }
+}
+
+.loginRight {
+  height: 100vh;
+  flex-direction: column;
+  background-color: #ffffff;
+
+  @include mixin.center;
+
+  .loginTitle {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 50px;
+  }
+
+  form {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .loginRight {
+    .loginTitle {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+    form {
+      width: 80%;
+    }
+  }
+}
