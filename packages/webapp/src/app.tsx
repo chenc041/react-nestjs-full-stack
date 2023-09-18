@@ -7,6 +7,7 @@ import { BasicLayout } from '~/layout';
 import Zh_CN from 'antd/locale/zh_CN';
 import { ErrorBoundary } from '~/exception/errorBoundary';
 import * as process from 'process';
+import { Login } from '~/pages/login';
 
 const App = () => {
   const [activePath, setActivePath] = React.useState('/');
@@ -38,7 +39,7 @@ const App = () => {
         process.env.NODE_ENV === 'development'
           ? undefined
           : async () => {
-              return new Promise((resolve) => {
+              return new Promise<{ name: string }>((resolve) => {
                 setTimeout(() => {
                   resolve({ name: 'chen' });
                 }, 100);
@@ -55,6 +56,14 @@ const App = () => {
           },
         };
       }),
+    },
+    {
+      path: 'login',
+      lazy: async () => {
+        return {
+          Component: Login,
+        };
+      },
     },
   ]);
 
