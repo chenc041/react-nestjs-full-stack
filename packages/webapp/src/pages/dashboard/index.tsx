@@ -2,7 +2,7 @@ import React from 'react';
 import { Table } from 'antd';
 import styles from '~/pages/dashboard/index.scss';
 
-export const DashboardPage = () => {
+export default () => {
   const dataSource = [
     {
       key: '1',

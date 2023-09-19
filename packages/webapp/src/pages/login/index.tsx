@@ -10,7 +10,7 @@ type FieldType = {
   remember?: string;
 };
 
-export const Login: React.FC = () => {
+export const LoginPage: React.FC = () => {
   const ref = React.useRef(null);
 
   React.useEffect(() => {

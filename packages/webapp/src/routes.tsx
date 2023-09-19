@@ -1,9 +1,5 @@
 import React from 'react';
 import { HomeFilled } from '@ant-design/icons';
-import { DashboardPage } from '~/pages/dashboard';
-import { NotFoundPage } from '~/exception/404';
-import { ForbiddenPage } from '~/exception/403';
-import { ServerErrorPage } from '~/exception/500';
 
 export interface RoutesType {
   title: string;
@@ -12,21 +8,21 @@ export interface RoutesType {
   hideInMenu?: boolean;
   description?: string;
   icon?: React.ComponentType<any>;
-  component: React.ComponentType<any>;
+  component: React.LazyExoticComponent<() => React.JSX.Element>;
   children?: RoutesType[];
 }
 
-export const routes: RoutesType[] = [
+const routes: RoutesType[] = [
   {
     path: '/',
     icon: HomeFilled,
     title: 'Dashboard',
-    component: DashboardPage,
+    component: React.lazy(() => import('./pages/dashboard')),
     children: [
       {
-        path: 'demo',
+        path: 'dashboard',
         title: 'Dashboard - child',
-        component: DashboardPage,
+        component: React.lazy(() => import('./pages/dashboard')),
       },
     ],
   },
@@ -34,18 +30,40 @@ export const routes: RoutesType[] = [
     path: '403',
     hideInMenu: true,
     title: 'forbidden',
-    component: ForbiddenPage,
+    component: React.lazy(() => import('./exception/403')),
   },
   {
     path: '500',
     hideInMenu: true,
     title: 'server error',
-    component: ServerErrorPage,
+    component: React.lazy(() => import('./exception/500')),
   },
   {
     path: '*',
     hideInMenu: true,
     title: 'Not found',
-    component: NotFoundPage,
+    component: React.lazy(() => import('./exception/404')),
   },
 ];
+
+const flattenRoutes: RoutesType[] = [];
+routes.forEach((item) => {
+  flattenRoutes.push(item);
+  if (item.children && item.children.length > 0) {
+    item.children.forEach((child) => {
+      flattenRoutes.push({
+        ...child,
+        path: (item.path === '/' ? item.path : item.path + '/') + (child.path.startsWith('/') ? child.path.replace(/^\//, '') : child.path),
+      });
+    });
+  }
+});
+
+const breadcrumb = new Map();
+flattenRoutes
+  .filter((item) => !item.hideInMenu)
+  .forEach((item) => {
+    breadcrumb.set(item.path, item);
+  });
+
+export { flattenRoutes, routes, breadcrumb };

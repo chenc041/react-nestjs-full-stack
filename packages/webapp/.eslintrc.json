@@ -18,6 +18,7 @@
     "sourceType": "module"
   },
   "rules": {
+    "react/display-name": 0,
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
     "@typescript-eslint/indent": 0,
