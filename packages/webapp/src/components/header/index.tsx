@@ -23,7 +23,7 @@ export const Header = () => {
   return (
     <>
       <header className={styles.header} style={{ position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 101 }}>
-        <div className="logo">{globalConfig.header}</div>
+        <div className={styles.logo}>{globalConfig.header}</div>
         <Dropdown menu={{ items }}>
           <a onClick={(e) => e.preventDefault()}>
             <Space>

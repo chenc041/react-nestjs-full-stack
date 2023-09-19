@@ -15,7 +15,12 @@
   section {
     flex: 1;
     height: 100%;
+    padding: 15px;
     min-height: calc(100vh - 52px);
     transition: all ease-in-out 0.8s;
+
+    .breadcrumb {
+      margin-bottom: 15px;
+    }
   }
 }

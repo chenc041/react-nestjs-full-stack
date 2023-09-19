@@ -7,15 +7,19 @@ export interface UserInfo {
 }
 
 export interface GlobalContextType {
-  activePath: string;
   userInfo: UserInfo;
-  setActivePath: (path: string) => void;
+  defaultOpenKey: string;
+  defaultSelectedKey: string;
+  setDefaultOpenKey: (path: string) => void;
   setUserInfo: (userInfo: UserInfo) => void;
+  setDefaultSelectedKey: (path: string) => void;
 }
 
 export const GlobalContext = React.createContext<GlobalContextType>({
   userInfo: {},
-  activePath: '/',
+  defaultOpenKey: '/',
+  defaultSelectedKey: '/',
   setUserInfo: () => {},
-  setActivePath: () => {},
+  setDefaultOpenKey: () => {},
+  setDefaultSelectedKey: () => {},
 });

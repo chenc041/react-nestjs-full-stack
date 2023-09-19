@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, App } from 'antd';
+import { Card, App, Breadcrumb } from 'antd';
 import { Outlet } from 'react-router-dom';
 import { Header } from '~/components/header';
 import { Footer } from '~/components/footer';
@@ -14,7 +14,15 @@ export const BasicLayout = () => {
         <main className={styles.layoutMain}>
           <SideMenu />
           <section>
-            <Card style={{ minHeight: 'calc(100vh - 130px)', margin: 15 }}>
+            <Breadcrumb
+              className={styles.breadcrumb}
+              items={[
+                {
+                  title: 'Dashboard',
+                },
+              ]}
+            />
+            <Card style={{ minHeight: 'calc(100vh - 180px)' }}>
               <Outlet />
             </Card>
             <Footer />

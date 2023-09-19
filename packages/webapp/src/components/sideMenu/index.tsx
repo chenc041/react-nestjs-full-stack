@@ -23,7 +23,7 @@ const menuItems: MenuProps['items'] = routes
   .filter((item) => !item.hideInMenu)
   .map(({ title, path, icon: Icon, children }) => {
     return getItem(
-      <Link to={path}>{title}</Link>,
+      children && children.length > 0 ? title : <Link to={path}>{title}</Link>,
       path,
       Icon ? <Icon /> : null,
       children && children.length > 0
@@ -34,9 +34,9 @@ const menuItems: MenuProps['items'] = routes
     );
   });
 export const SideMenu = () => {
-  const { activePath, setActivePath } = useContext<GlobalContextType>(GlobalContext);
+  const { setDefaultSelectedKey, defaultSelectedKey, defaultOpenKey } = useContext<GlobalContextType>(GlobalContext);
   const onClick: MenuProps['onClick'] = (e) => {
-    setActivePath(e.key);
+    setDefaultSelectedKey(e.key);
   };
 
   return (
@@ -46,10 +46,10 @@ export const SideMenu = () => {
         onClick={onClick}
         items={menuItems}
         className={styles.sideMenu}
-        defaultOpenKeys={[activePath]}
         theme={globalConfig.menuTheme}
-        defaultSelectedKeys={[activePath]}
+        defaultOpenKeys={[defaultOpenKey]}
         inlineCollapsed={globalConfig.collapsed}
+        defaultSelectedKeys={[defaultSelectedKey]}
         style={{ position: 'fixed', top: 52, zIndex: 10, width: globalConfig.collapsed ? 'auto' : 208 }}
       />
       <div className={styles.sideMenu} style={{ opacity: 0, width: globalConfig.collapsed ? 106 : 208 }} />

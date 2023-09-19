@@ -10,8 +10,9 @@ import * as process from 'process';
 import { Login } from '~/pages/login';
 
 const App = () => {
-  const [activePath, setActivePath] = React.useState('/');
   const [userInfo, setUserInfo] = React.useState<UserInfo>({});
+  const [defaultOpenKey, setDefaultOpenKey] = React.useState('/');
+  const [defaultSelectedKey, setDefaultSelectedKey] = React.useState('/');
 
   const flatRoutes = useMemo(() => {
     const tempFlatRoutes: RoutesType[] = [];
@@ -67,9 +68,17 @@ const App = () => {
     },
   ]);
 
+  React.useEffect(() => {
+    const [first] = flatRoutes;
+    setDefaultOpenKey(`${first.path}`);
+    setDefaultSelectedKey(`${first.path}${first.children && first.children.length > 0 ? first.children[0].path : ''}`);
+  }, [flatRoutes]);
+
   return (
     <ConfigProvider locale={Zh_CN}>
-      <GlobalContext.Provider value={{ userInfo, activePath, setActivePath, setUserInfo }}>
+      <GlobalContext.Provider
+        value={{ userInfo, defaultOpenKey, setDefaultOpenKey, defaultSelectedKey, setDefaultSelectedKey, setUserInfo }}
+      >
         <RouterProvider
           router={router}
           fallbackElement={

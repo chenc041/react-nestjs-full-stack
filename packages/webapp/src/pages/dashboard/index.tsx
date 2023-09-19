@@ -38,7 +38,7 @@ export const DashboardPage = () => {
 
   return (
     <div className={styles.dashboard}>
-      <Table dataSource={dataSource} columns={columns} />
+      <Table dataSource={dataSource} columns={columns} bordered />
     </div>
   );
 };
