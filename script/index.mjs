@@ -14,7 +14,7 @@ if (exist) {
     if (err) {
       console.error(`git clone ${repositoryUrl} error ==>`, err)
     }
-    console.log('stdout ==>', stdout);
+    console.log('stdout ==>', stdout || `${repositoryUrl} clone done`);
   })
 }
 export {}
