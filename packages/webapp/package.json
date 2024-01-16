@@ -23,7 +23,7 @@
     "axios": "^1.5.0",
     "core-js": "^3.32.2",
     "postcss": "^8.4.29",
-    "postcss-loader": "^7.3.3",
+    "postcss-loader": "^8.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
