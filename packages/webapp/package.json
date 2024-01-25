@@ -68,7 +68,7 @@
     "sass-loader": "^14.0.0",
     "style-loader": "^3.3.3",
     "stylelint": "^15.10.3",
-    "stylelint-config-recommended": "^13.0.0",
+    "stylelint-config-recommended": "^14.0.0",
     "terser-webpack-plugin": "^5.3.9",
     "thread-loader": "^4.0.2",
     "ts-loader": "^9.4.4",
