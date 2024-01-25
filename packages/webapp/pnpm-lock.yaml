@@ -36,8 +36,8 @@ dependencies:
     specifier: ^6.16.0
     version: 6.16.0(react-dom@18.2.0)(react@18.2.0)
   redux:
-    specifier: ^4.2.1
-    version: 4.2.1
+    specifier: ^5.0.0
+    version: 5.0.0
   typed.js:
     specifier: ^2.0.16
     version: 2.0.16
@@ -7687,10 +7687,8 @@ packages:
       strip-indent: 4.0.0
     dev: true
 
-  /redux@4.2.1:
-    resolution: {integrity: sha512-LAUYz4lc+Do8/g7aeRa8JkyDErK6ekstQaqWQrNRW//MY1TvCEpMtpTWvlQ+FPbWCx+Xixu/6SHt5N0HR+SB4w==}
-    dependencies:
-      '@babel/runtime': 7.22.15
+  /redux@5.0.0:
+    resolution: {integrity: sha512-blLIYmYetpZMET6Q6uCY7Jtl/Im5OBldy+vNPauA8vvsdqyt66oep4EUpAMWNHauTC6xa9JuRPhRB72rY82QGA==}
     dev: false
 
   /reflect.getprototypeof@1.0.3:
