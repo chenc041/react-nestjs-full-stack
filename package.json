@@ -2,7 +2,7 @@
   "name": "root",
   "private": true,
   "devDependencies": {
-    "npm-run-all2": "^5.0.0",
+    "npm-run-all2": "^6.1.2",
     "process": "^0.11.10"
   },
   "scripts": {
