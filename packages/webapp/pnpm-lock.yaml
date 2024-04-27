@@ -98,7 +98,7 @@ importers:
         version: 7.1.1(webpack@5.91.0(webpack-cli@5.1.4(webpack-bundle-analyzer@4.10.2)(webpack-dev-server@5.0.4)(webpack@5.91.0)))
       cssnano:
         specifier: ^7.0.0
-        version: 7.0.0(postcss@8.4.38)
+        version: 7.0.1(postcss@8.4.38)
       cypress:
         specifier: ^13.2.0
         version: 13.8.1
@@ -1769,6 +1769,9 @@ packages:
   caniuse-lite@1.0.30001605:
     resolution: {integrity: sha512-nXwGlFWo34uliI9z3n6Qc0wZaf7zaZWA1CPZ169La5mV3I/gem7bst0vr5XQH5TJXZIMfDeZyOrZnSlVzKxxHQ==}
 
+  caniuse-lite@1.0.30001612:
+    resolution: {integrity: sha512-lFgnZ07UhaCcsSZgWW0K5j4e69dK1u/ltrL9lTUiFOwNHs12S3UMIEYgBV0Z6C6hRDev7iRnMzzYmKabYdXF9g==}
+
   caseless@0.12.0:
     resolution: {integrity: sha512-4tYFyifaFfGacoiObjJegolkwSU4xQNGbVgUiNYVUxbQ2x2lUsFvY4hVgVzGiIe6WLOPqycWXA40l+PWsxthUw==}
 
@@ -2018,8 +2021,8 @@ packages:
     engines: {node: '>=4'}
     hasBin: true
 
-  cssnano-preset-default@7.0.0:
-    resolution: {integrity: sha512-3YdcG6aHxALLdT0Gjq44zA45PcgW+qWuODq4XNtwpx1olR08cX+tozlXOU25IjeXeaYyqvTUxicIr2fcdJHRZg==}
+  cssnano-preset-default@7.0.1:
+    resolution: {integrity: sha512-Fumyr+uZMcjYQeuHssAZxn0cKj3cdQc5GcxkBcmEzISGB+UW9CLNlU4tBOJbJGcPukFDlicG32eFbrc8K9V5pw==}
     engines: {node: ^18.12.0 || ^20.9.0 || >=22.0}
     peerDependencies:
       postcss: ^8.4.31
@@ -2030,8 +2033,8 @@ packages:
     peerDependencies:
       postcss: ^8.4.31
 
-  cssnano@7.0.0:
-    resolution: {integrity: sha512-hhVRaaGbEDpb99AHBTaNJf6oXpnU4B7evBi7rt3ShiOh5JEnWsBWYsldywE9L0twVTLPBY9jT/zY6YODXP3TEg==}
+  cssnano@7.0.1:
+    resolution: {integrity: sha512-917Mej/4SdI7b55atsli3sU4MOJ9XDoKgnlCtQtXYj8XUFcM3riTuYHyqBBnnskawW+zWwp0KxJzpEUodlpqUg==}
     engines: {node: ^18.12.0 || ^20.9.0 || >=22.0}
     peerDependencies:
       postcss: ^8.4.31
@@ -3636,11 +3639,11 @@ packages:
     resolution: {integrity: sha512-d7Uw+eZoloe0EHDIYoe+bQ5WXnGMOpmiZFTuMWCwpjzzkL2nTjcKiAk4hh8TjnGye2TwWOk3UXucZ+3rbmBa8Q==}
     engines: {node: '>= 0.4'}
 
-  postcss-calc@9.0.1:
-    resolution: {integrity: sha512-TipgjGyzP5QzEhsOZUaIkeO5mKeMFpebWzRogWG/ysonUlnHcq5aJe0jOjpfzUU8PeSaBQnrE8ehR0QA5vs8PQ==}
-    engines: {node: ^14 || ^16 || >=18.0}
+  postcss-calc@10.0.0:
+    resolution: {integrity: sha512-OmjhudoNTP0QleZCwl1i6NeBwN+5MZbY5ersLZz69mjJiDVv/p57RjRuKDkHeDWr4T+S97wQfsqRTNoDHB2e3g==}
+    engines: {node: ^18.12 || ^20.9 || >=22.0}
     peerDependencies:
-      postcss: ^8.2.2
+      postcss: ^8.4.38
 
   postcss-colormin@7.0.0:
     resolution: {integrity: sha512-5CN6fqtsEtEtwf3mFV3B4UaZnlYljPpzmGeDB4yCK067PnAtfLe9uX2aFZaEwxHE7HopG5rUkW8gyHrNAesHEg==}
@@ -6966,11 +6969,13 @@ snapshots:
   caniuse-api@3.0.0:
     dependencies:
       browserslist: 4.23.0
-      caniuse-lite: 1.0.30001605
+      caniuse-lite: 1.0.30001612
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
 
   caniuse-lite@1.0.30001605: {}
+
+  caniuse-lite@1.0.30001612: {}
 
   caseless@0.12.0: {}
 
@@ -7211,13 +7216,13 @@ snapshots:
 
   cssesc@3.0.0: {}
 
-  cssnano-preset-default@7.0.0(postcss@8.4.38):
+  cssnano-preset-default@7.0.1(postcss@8.4.38):
     dependencies:
       browserslist: 4.23.0
       css-declaration-sorter: 7.2.0(postcss@8.4.38)
       cssnano-utils: 5.0.0(postcss@8.4.38)
       postcss: 8.4.38
-      postcss-calc: 9.0.1(postcss@8.4.38)
+      postcss-calc: 10.0.0(postcss@8.4.38)
       postcss-colormin: 7.0.0(postcss@8.4.38)
       postcss-convert-values: 7.0.0(postcss@8.4.38)
       postcss-discard-comments: 7.0.0(postcss@8.4.38)
@@ -7249,9 +7254,9 @@ snapshots:
     dependencies:
       postcss: 8.4.38
 
-  cssnano@7.0.0(postcss@8.4.38):
+  cssnano@7.0.1(postcss@8.4.38):
     dependencies:
-      cssnano-preset-default: 7.0.0(postcss@8.4.38)
+      cssnano-preset-default: 7.0.1(postcss@8.4.38)
       lilconfig: 3.1.1
       postcss: 8.4.38
 
@@ -8975,7 +8980,7 @@ snapshots:
 
   possible-typed-array-names@1.0.0: {}
 
-  postcss-calc@9.0.1(postcss@8.4.38):
+  postcss-calc@10.0.0(postcss@8.4.38):
     dependencies:
       postcss: 8.4.38
       postcss-selector-parser: 6.0.16
