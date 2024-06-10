@@ -19,6 +19,7 @@ export const config: webpack.Configuration = {
           {
             loader: 'css-loader',
             options: {
+              esModule: false,
               modules: {
                 localIdentName: '[name]__[local]__[contenthash:base64:5]',
               },
