@@ -54,7 +54,6 @@ export const Login: React.FC = () => {
         </div>
       </Col>
       <Col sm={24} xs={24} md={12} lg={12} xl={12} xxl={12}>
-        <div className='text-3xl border border-red-600 font-bold'>111</div>
         <div className={styles.loginRight}>
           <div className={styles.loginTitle}>{globalConfig.header}</div>
           <Form initialValues={{ remember: true }} onFinish={onFinish} onFinishFailed={onFinishFailed} autoComplete="off" layout="vertical">
