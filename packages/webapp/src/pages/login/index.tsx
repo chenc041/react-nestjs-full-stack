@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Checkbox, Form, Input, Col, Row } from 'antd';
-import styles from '~/pages/login/index.scss';
+import styles from '~/pages/login/index.module.scss';
 import { globalConfig } from '~/config';
 import Typed from 'typed.js';
 
@@ -16,7 +16,7 @@ export const Login: React.FC = () => {
   React.useEffect(() => {
     const typed = new Typed(ref.current, {
       strings: [
-        '你知道那种西瓜最好吃吗?',
+        '你知道哪种西瓜最好吃吗?',
         '8424?',
         '麒麟?',
         '黑美人?',
@@ -54,6 +54,7 @@ export const Login: React.FC = () => {
         </div>
       </Col>
       <Col sm={24} xs={24} md={12} lg={12} xl={12} xxl={12}>
+        <div className='text-3xl border border-red-600 font-bold'>111</div>
         <div className={styles.loginRight}>
           <div className={styles.loginTitle}>{globalConfig.header}</div>
           <Form initialValues={{ remember: true }} onFinish={onFinish} onFinishFailed={onFinishFailed} autoComplete="off" layout="vertical">

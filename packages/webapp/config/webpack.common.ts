@@ -28,6 +28,21 @@ export const config: webpack.Configuration = {
           'postcss-loader',
           'sass-loader',
         ],
+        exclude: /(global\.scss|node_modules)/,
+      },
+      {
+        test: /global.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: false,
+            },
+          },
+          'postcss-loader',
+          'sass-loader',
+        ],
         exclude: /node_modules/,
       },
       {

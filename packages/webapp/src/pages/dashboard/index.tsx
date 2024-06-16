@@ -37,8 +37,10 @@ export const DashboardPage = () => {
   ];
 
   return (
-    <div className={styles.dashboard}>
-      <Table dataSource={dataSource} columns={columns} />
+    <div className="border-red-600 border-[2px]">
+      <div className={styles.dashboard}>
+        <Table dataSource={dataSource} columns={columns} />
+      </div>
     </div>
   );
 };
