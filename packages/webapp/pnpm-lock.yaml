@@ -104,7 +104,7 @@ importers:
         version: 13.13.0
       esbuild-loader:
         specifier: ^4.0.2
-        version: 4.2.0(webpack@5.92.1(webpack-cli@5.1.4))
+        version: 4.2.1(webpack@5.92.1(webpack-cli@5.1.4))
       eslint:
         specifier: ^9.0.0
         version: 9.6.0
@@ -2331,8 +2331,8 @@ packages:
     resolution: {integrity: sha512-QCOllgZJtaUo9miYBcLChTUaHNjJF3PYs1VidD7AwiEj1kYxKeQTctLAezAOH5ZKRH0g2IgPn6KwB4IT8iRpvA==}
     engines: {node: '>= 0.4'}
 
-  esbuild-loader@4.2.0:
-    resolution: {integrity: sha512-BhwHchuDknxIa69AqOPeZh2fIFqj2AzZKC1E3RBRvXSuyk5drsqMrwsgYZJufX41yrauLYjDM3KBmruoGl1NWQ==}
+  esbuild-loader@4.2.1:
+    resolution: {integrity: sha512-nybkSyQUJm5XXScmGTCsXBoIBc9/AFVm0Fn7nRckt4Ri5rE4915DL4Wxd1P7ROCoaqHWR2qGAgCDS/9K/JJ82g==}
     peerDependencies:
       webpack: ^4.40.0 || ^5.0.0
 
@@ -7724,7 +7724,7 @@ snapshots:
       is-date-object: 1.0.5
       is-symbol: 1.0.4
 
-  esbuild-loader@4.2.0(webpack@5.92.1(webpack-cli@5.1.4)):
+  esbuild-loader@4.2.1(webpack@5.92.1(webpack-cli@5.1.4)):
     dependencies:
       esbuild: 0.21.5
       get-tsconfig: 4.7.5
