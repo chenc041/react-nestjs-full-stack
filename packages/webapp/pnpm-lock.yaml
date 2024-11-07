@@ -164,7 +164,7 @@ importers:
         version: 5.3.10(webpack@5.96.1)
       thread-loader:
         specifier: ^4.0.2
-        version: 4.0.2(webpack@5.96.1)
+        version: 4.0.4(webpack@5.96.1)
       ts-loader:
         specifier: ^9.4.4
         version: 9.5.1(typescript@5.5.3)(webpack@5.96.1)
@@ -4845,8 +4845,8 @@ packages:
     peerDependencies:
       tslib: ^2
 
-  thread-loader@4.0.2:
-    resolution: {integrity: sha512-UOk/KBydsQjh4Ja5kocxDUzhv11KYptHN/h8gdSwo6/MBkYrWqQua6K2qwlpXnCXS9c/uLs8F/JF8rpveF0+fA==}
+  thread-loader@4.0.4:
+    resolution: {integrity: sha512-tXagu6Hivd03wB2tiS1bqvw345sc7mKei32EgpYpq31ZLes9FN0mEK2nKzXLRFgwt3PsBB0E/MZDp159rDoqwg==}
     engines: {node: '>= 16.10.0'}
     peerDependencies:
       webpack: ^5.0.0
@@ -10552,7 +10552,7 @@ snapshots:
     dependencies:
       tslib: 2.6.3
 
-  thread-loader@4.0.2(webpack@5.96.1):
+  thread-loader@4.0.4(webpack@5.96.1):
     dependencies:
       json-parse-better-errors: 1.0.2
       loader-runner: 4.3.0
